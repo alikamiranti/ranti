@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Biodata Diri — Alika Miranti</title>
+<meta name="description" content="Website biodata Alika Miranti — pelengkap CV, formal, elegan, estetika coklat." />
+<style>
+  :root{
+    --brown:#7b5e47; --brown-dark:#5a4535; --cream:#fdfdf0; --ivory:#faf9f6;
+    --text:#3d342f; --muted:#6b625a; --accent:#c4a679; --accent-dark:#9c805f;
+    --grad: linear-gradient(135deg, #7b5e47 0%, #c4a679 35%, #e8d5c5 70%, #a48c6e 100%);
+    --grad-soft: linear-gradient(135deg, rgba(123,94,71,.08), rgba(196,166,121,.08));
+    --line:#d7c8bc;
+    --bg:#faf6f0;
+    --radius:14px;
+    --shadow: 0 10px 24px rgba(90,69,53,.08);
+    --font-body: "Georgia", "Times New Roman", serif;
+    --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* Header gradient bar */
+  .topline{height:6px;background:var(--grad)}
+  /* Navbar */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,249,246,.93);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:12px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+  .monogram{
+    width:38px;height:38px;border-radius:10px;
+    background:#e8d5c5;color:#7b5e47;
+    display:grid;place-items:center;font-weight:700;letter-spacing:.3px;font-size:14px;
+  }
+  .brand .name{font-family:var(--font-heading);font-size:15px;letter-spacing:.2px;display:block;line-height:1.3}
+  .brand .tag{font-size:11px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase}
+  .nav-links{display:flex;gap:20px;align-items:center}
+  .nav-links a{color:var(--text);text-decoration:none;font-size:14px;font-weight:600}
+  .nav-links a:hover{color:var(--accent)}
+  .btn{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--grad);color:#fff;border:0;
+    padding:9px 16px;border-radius:999px;
+    font-weight:700;font-size:13.5px;cursor:pointer;text-decoration:none;
+    box-shadow:0 6px 16px rgba(123,94,71,.22);
+  }
+  .btn:hover{filter:brightness(1.03)}
+  .btn.ghost{background:#fff;color:var(--brown);border:1px solid var(--line);box-shadow:none}
+  /* Layout */
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  /* Hero */
+  .hero{
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.2fr .8fr;gap:32px;padding:40px 0 36px;align-items:center;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    color:var(--brown-dark);
+    background:var(--grad-soft);
+    border:1px solid var(--line);
+    padding:6px 12px;border-radius:999px;
+  }
+  .badge i{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+  h1{
+    font-family:var(--font-heading);
+    font-size:clamp(34px, 5vw, 48px);
+    line-height:1.1;margin:12px 0 8px;font-weight:700;letter-spacing:-.3px;
+  }
+  h1 .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{font-size:17px;color:var(--muted);max-width:520px;margin:0 0 20px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+  .chip{
+    font-size:13px;background:#fff;border:1px solid var(--line);
+    padding:7px 12px;border-radius:999px;color:var(--brown);
+  }
+  .chip strong{color:var(--text)}
+  .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+  /* Profile card */
+  .card{
+    background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .card-top{
+    background:var(--grad);color:#fff;padding:26px 22px 44px;
+    position:relative;
+  }
+  .card-top small{
+    letter-spacing:1.5px;text-transform:uppercase;opacity:.9;font-size:11px;font-weight:700;
+  }
+  .card-top h2{
+    font-family:var(--font-heading);margin:6px 0 4px;font-size:22px;line-height:1.3;
+  }
+  .card-top p{margin:0;opacity:.9;font-size:14px}
+  .avatar{
+    width:90px;height:90px;border-radius:50%;
+    background:#fff;
+    display:grid;place-items:center;
+    font-family:var(--font-heading);font-weight:700;font-size:26px;
+    border:3px solid var(--accent);
+    box-shadow:0 8px 22px rgba(123,94,71,.25);
+    margin:-40px 0 0 22px;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .avatar:hover{
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:0 12px 30px rgba(123,94,71,.35);
+  }
+  .avatar img{
+    width:100%;height:100%;border-radius:50%;object-fit:contain;
+    background-color:#e3d5c7;
+    display:block;
+    margin:0 auto;
+  }
+  .card-body{padding:16px 20px 16px}
+  .kv{
+    display:grid;grid-template-columns:120px 1fr;gap:6px;font-size:13.5px;padding:5px 0;border-bottom:1px dashed var(--line);
+  }
+  .kv:last-child{border:0}
+  .kv dt{color:var(--muted)}
+  .kv dd{margin:0;font-weight:600}
+  /* Sections */
+  section{padding:28px 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .panel{
+    background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);
+  }
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .sec-num{
+    width:32px;height:32px;border-radius:8px;background:var(--grad);
+    color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px;flex-shrink:0;
+  }
+  .sec-head h3{
+    font-family:var(--font-heading);margin:0;font-size:19px;letter-spacing:-.2px;
+  }
+  .sec-head p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+  .rule{height:2px;width:50px;background:var(--brown);border-radius:999px;margin:8px 0 14px}
+  table.biodata{width:100%;border-collapse:collapse;font-size:14px}
+  table.biodata th, table.biodata td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.biodata th{
+    width:160px;color:var(--muted);font-weight:600;
+  }
+  table.biodata td{font-weight:600;color:var(--text)}
+  table.biodata tr:last-child th, table.biodata tr:last-child td{border-bottom:0}
+  /* Skills */
+  .skill{margin:12px 0}
+  .skill-top{display:flex;justify-content:space-between;font-size:13.5px;font-weight:700;margin-bottom:4px}
+  .skill-top em{font-style:normal;color:var(--muted);font-weight:600}
+  .bar{height:8px;background:#edece8;border-radius:999px;overflow:hidden}
+  .bar span{display:block;height:100%;background:var(--grad);border-radius:999px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .tag{font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:999px;
+    background:var(--grad-soft);border:1px solid var(--line);color:var(--brown)}
+  /* Hobi */
+  .hobi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .hobi{
+    background:#faf6f0;border:1px solid var(--line);
+    border-radius:12px;padding:14px;text-align:center;
+  }
+  .hobi .ico{font-size:22px;margin-bottom:6px;display:block}
+  .hobi b{display:block;margin:4px 0 2px;font-size:13px}
+  .hobi small{color:var(--muted);font-size:12px;line-height:1.4;display:block}
+  blockquote{
+    margin:14px 0 0;padding:14px 16px;border-radius:10px;
+    background:var(--grad-soft);
+    border-left:3px solid var(--brown);
+    font-style:italic;color:#4a4038;font-size:14px;
+  }
+  /* Kontak */
+  .cta{
+    background:var(--grad);color:#fff;border-radius:16px;padding:24px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  }
+  .cta h3{font-family:var(--font-heading);margin:0 0 4px;font-size:20px}
+  .cta p{margin:0;opacity:.92}
+  .cta .btn{background:#fff;color:var(--brown-dark);box-shadow:none}
+  footer{padding:18px 0 28px;color:var(--muted);font-size:13px;text-align:center}
+  footer .line{height:1px;background:var(--line);margin-bottom:12px}
+  /* Responsive */
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;padding:30px 0}
+    .grid2{grid-template-columns:1fr}
+    .hobi-grid{grid-template-columns:1fr 1fr}
+    .nav-links a:not(.btn){display:none}
+  }
+  @media print{
+    .nav, .hero-actions, .cta, footer .noprint{display:none!important}
+    body{background:#fff}
+    .panel,.card{box-shadow:none}
+    section{padding:16px 0}
+  }
+</style>
+</head>
+<body>
+<div class="topline"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#beranda">
+      <div class="monogram">AM</div>
+      <div><span class="name">Alika Miranti</span><span class="tag">Biodata & CV</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#profil">Profil</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#hobi">Hobi</a>
+      <a class="btn" href="#" onclick="window.print();return false;">Cetak / PDF</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="beranda">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge"><i></i> Pelengkap CV — Estetika Coklat</span>
+      <h1>Halo, saya <span class="accent">Alika<br/>Miranti</span></h1>
+      <p class="subtitle">
+        Mahasiswi dengan minat pada teknologi jaringan, desain, dan kreativitas digital.
+        Diberkati hati membaca, menciptakan konten, dan terus maju dalam setiap kemungkinan.
+      </p>
+      <div class="hero-meta">
+        <span class="chip">📍 Sukaresik, Tasikmalaya</span>
+        <span class="chip">📱 0821-1113-9306</span>
+        <span class="chip">📧 alikamiranti734@gmail.com</span>
+        <span class="chip">🎓 SMKN Sukaresik</span>
+        <span class="chip">💼 Minat: <strong>Desain & Teknologi</strong></span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="#profil">Lihat Biodata Lengkap</a>
+        <a class="btn ghost" href="#kontak">Hubungi Saya</a>
+      </div>
+    </div>
+    <aside class="card" aria-label="Kartu profil singkat">
+      <div class="card-top">
+        <small>Curriculum Vitae</small>
+        <h2>Alika Miranti</h2>
+        <p>Mahasiswi • Membaca • Desain • Jaringan</p>
+      </div>
+      <img src="assets/foto-alika-new.png" alt="Foto Alika Miranti - Foto Resmi" class="avatar" loading="lazy" />
+      <div class="card-body">
+        <dl>
+          <div class="kv"><dt>Tanggal Lahir</dt><dd>04 Januari 2008</dd></div>
+          <div class="kv"><dt>Alamat</dt><dd>Sukaresik, Kab. Tasikmalaya</dd></div>
+          <div class="kv"><dt>Pendidikan</dt><dd>SMKN Sukaresik</dd></div>
+          <div class="kv"><dt>Status</dt><dd>Terbuka untuk PKL / Magang</dd></div>
+        </dl>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="profil">
+    <div class="grid2">
+      <div class="panel">
+        <div class="sec-head"><div class="sec-num">01</div><div><h3>Profil Singkat</h3><p>Tentang saya secara profesional</p></div></div>
+        <div class="rule"></div>
+        <p style="margin:0;color:#3d342f;font-size:14.5px">
+          Alika Miranti, lahir 4 Januari 2008 di Tasikmalaya. Sedang menempuh pendidikan di
+          <strong>SMKN Sukaresik</strong> dengan jurusan Teknik Komputer dan Jaringan. 
+          Memiliki ketertarikan mendalam pada konfigurasi jaringan (MikroTik), desain topologi,
+          serta keterampilan Microsoft Office. Saya memiliki sifat <strong>teliti, disiplin,</strong>
+          dan <strong>kreatif</strong> dalam setiap pekerjaan. Saya menyukai aktivitas membaca novel
+          dan menciptakan konten sebagai cara untuk mengembangkan pikiran dan keterampilan baru.
+        </p>
+        <blockquote>“Membaca membuka dunia, dan setiap hal baru adalah peluang untuk tumbuh.”</blockquote>
+        <div class="tags">
+          <span class="tag">Teliti</span>
+          <span class="tag">Disiplin</span>
+          <span class="tag">Kreatif</span>
+          <span class="tag">Membaca</span>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="sec-head"><div class="sec-num">02</div><div><h3>Data Pribadi</h3><p>Informasi lengkap</p></div></div>
+        <div class="rule"></div>
+        <table class="biodata">
+          <tr><th>Nama Lengkap</th><td>Alika Miranti</td></tr>
+          <tr><th>Tanggal Lahir</th><td>04 Januari 2008</td></tr>
+          <tr><th>Alamat</th><td>Sukaresik, Kabupaten Tasikmalaya, Jawa Barat</td></tr>
+          <tr><th>Pendidikan Terakhir</th><td>SMK Negeri Sukaresik</td></tr>
+          <tr><th>Status</th><td>Mahasiswa/Pelajar — Aktif</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="keahlian">
+    <div class="panel">
+      <div class="sec-head"><div class="sec-num">03</div><div><h3>Keahlian</h3><p>Kompetensi utama</p></div></div>
+      <div class="rule"></div>
+      <div class="skill"><div class="skill-top"><span>Konfigurasi MikroTik</span><em>80%</em></div><div class="bar"><span style="width:80%"></span></div></div>
+      <div class="skill"><div class="skill-top"><span>Desain Topologi Jaringan</span><em>75%</em></div><div class="bar"><span style="width:75%"></span></div></div>
+      <div class="skill"><div class="skill-top"><span>Microsoft Office (Word/Excel/PowerPoint)</span><em>85%</em></div><div class="bar"><span style="width:85%"></span></div></div>
+      <div class="tags">
+        <span class="tag">MikroTik</span>
+        <span class="tag">Topologi</span>
+        <span class="tag">Excel</span>
+        <span class="tag">Presentasi</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="hobi">
+    <div class="panel">
+      <div class="sec-head"><div class="sec-num">04</div><div><h3>Hobi & Minat</h3><p>Keseimbangan hidup dan pengembangan diri</p></div></div>
+      <div class="rule"></div>
+      <div class="hobi-grid">
+        <div class="hobi"><div class="ico">📖</div><b>Membaca Novel</b><small>Menikmati cerita dengan berbagai genre untuk menghangatkan hati dan membangun kosa kata.</small></div>
+        <div class="hobi"><div class="ico">📸</div><b>Ngonten</b><small>Menciptakan konten menarik untuk berbagi pengalaman dan ilmu.</small></div>
+        <div class="hobi"><div class="ico">🎨</div><b>Desain</b><small>Mendesain konsep dan ide visual untuk proyek personal maupun sekolah.</small></div>
+        <div class="hobi"><div class="ico">💡</div><b>Belajar Hal Baru</b><small>Terbuka terhadap keterampilan dan pengalaman yang belum pernah dicoba.</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="cta">
+      <div>
+        <h3>Siap untuk PKL, magang, atau kerja sama?</h3>
+        <p>Sukaresik, Kabupaten Tasikmalaya — SMKN Sukaresik • 04 Januari 2008</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn" href="#" onclick="window.print();return false;">⬇ Unduh / Cetak CV</a>
+      </div>
+    </div>
+    <p style="color:var(--muted);font-size:13.5px;margin:12px 2px 0">
+      * Halaman ini dapat dilampirkan sebagai pelengkap CV. Klik <strong>Cetak / PDF</strong> → pilih “Save as PDF” untuk menyimpan.
+      Untuk menambahkan foto, WhatsApp, dan email, beri tahu saya agar saya cantumkan.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="line"></div>
+    © 2026 Alika Miranti — Sukaresik, Tasikmalaya • Dibuat sebagai pelengkap CV • Elegan • Estetika • Profesional<br>
+    📞 0821-1113-9306 | ✉️ alikamiranti734@gmail.com
+  </div>
+</footer>
+
+</body>
+</html>
